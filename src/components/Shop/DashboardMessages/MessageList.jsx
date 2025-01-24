@@ -33,6 +33,7 @@ const MessageList = ({data,index,setOpen,setCurrentChat,me,setUserData,online,se
         <div className="relative">
             {user?.avatar?.url && <img src={`${user?.avatar?.url}`} alt="" className="w-[50px] h-[50px] rounded-full"/>}
             {!user?.avatar?.url && <CgProfile size={47} color="rgb(128 128 128)" />}
+            {console.log("online: ",online)}
           {online ? (
             <div className="w-[12px] h-[12px] bg-green-400 rounded-full absolute top-[2px] right-[2px]" />
           ) : (

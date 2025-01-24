@@ -7,8 +7,10 @@ import { server } from "../../server";
 import SellerInbox from "./SellerInbox";
 import MessageList from "./MessageList";
 
-const endpoint = import.meta.env.VITE_ENDPOINT;
-const socketId = socketIO(endpoint, { transports: ["websocket"] });
+//const ENDPOINT = "https://socket-ecommerce-tu68.onrender.com/";
+const ENDPOINT = "https://v2verse-socket.onrender.com"
+//const ENDPOINT = "http://localhost:4000/"
+const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const UserInbox = () => {
   const { user,loading } = useSelector((state) => state.user);

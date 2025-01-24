@@ -7,8 +7,10 @@ import MessageList from "./MessageList";
 import SellerInbox from "./SellerInbox";
 import socketIO from "socket.io-client";
 
-const endpoint = import.meta.env.VITE_ENDPOINT;
-const socketId = socketIO(endpoint, { transports: ["websocket"] });
+// const ENDPOINT = "https://socket-ecommerce-tu68.onrender.com/";
+const ENDPOINT = "https://v2verse-socket.onrender.com"
+// const ENDPOINT = "http://localhost:4000/"
+const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const DashboardMessages = () => {
   const { seller,isLoading } = useSelector((state) => state.seller);
