@@ -2,7 +2,7 @@ import styles from '../../styles/styles'
 import { Link } from 'react-router-dom'
 import { categoriesData, productData } from '../../static/data';
 import { AiOutlineHeart, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {IoIosArrowDown, IoIosArrowForward}  from 'react-icons/io';
 import {BiMenuAltLeft} from 'react-icons/bi';
 import {CgProfile} from 'react-icons/cg';
@@ -27,6 +27,7 @@ const Header = ({activeHeading}) => {
     const [openCart,setOpenCart] = useState(false); 
     const [openWishlist,setOpenWishlist] = useState(false); 
     const [open, setOpen] = useState(false);
+    const searchBoxRef = useRef(null);
 
 
     const handleSearchChange = (e)=>{
@@ -35,6 +36,18 @@ const Header = ({activeHeading}) => {
         const filteredProducts = allProducts && allProducts.filter((product)=> product.name.toLowerCase().includes(term.toLowerCase()));
         setSearchData(filteredProducts);
     }
+    const handleClickOutside = (event) => {
+        if (searchBoxRef.current && !searchBoxRef.current.contains(event.target)) {
+            setSearchData(null);
+            setDropDown(false);
+        }
+    };
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     window.addEventListener("scroll",()=>{
         if(window.scrollY > 100){
@@ -54,18 +67,21 @@ const Header = ({activeHeading}) => {
             </div>
 
             {/* Search Box */}
-            <div className="w-[50%] relative">
+            <div className="w-[50%] relative" ref={searchBoxRef}>
                 <input type="text" placeholder='Search Products...' value={searchTerm} onChange={handleSearchChange} className='h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md' />
                 <AiOutlineSearch size={30} className='absolute right-2 top-1.5 cursor-pointer'/>
                 {
                     searchData && searchData.length !== 0 ? (
-                        <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
+                        <div className="absolute min-h-[30vh] rounded-b-xl bg-slate-50 shadow-sm-2 z-[9] p-4">
                             {searchData && searchData.map((i, index)=>{
                                 // const d = i.name;
                                 // const Product_name = d.replace(/\s+/g,"-");
                                 return(
                                     <Link to={`/product/${i._id}`} key={index}>
-                                        <div className="w-full flex items-start-py-3"><img src={i.images[0].url} className='w-[40px] h-[40px] mr-[10px]' alt="" /><h2>{i.name}</h2></div>
+                                        <div className="w-full flex items-start-py-3 mb-5">
+                                          <img src={i.images[0].url} className='w-[40px] h-[40px] mr-[10px] rounded-sm' alt="" />
+                                          <h2 className='pl-3 text-[15px] sm:line-clamp-1 line-clamp-2 overflow-hidden'>{i.name}</h2>
+                                        </div>
                                     </Link>
                                 )
                             })}
@@ -197,26 +213,24 @@ const Header = ({activeHeading}) => {
                 <RxCross1 size={30} className="ml-4 mt-5" onClick={() => setOpen(false)}/>
               </div>
 
+              {/* Search Box */}
               <div className="my-8 w-[92%] m-auto h-[40px relative]">
-                <input type="search" placeholder="Search Product..." className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
-                  value={searchTerm}
-                  onChange={handleSearchChange}/>
-                {searchData && (
+                <input type="search" placeholder="Search Product..." className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md" value={searchTerm} onChange={handleSearchChange}/>
+                {(searchData && searchData.length !== 0) ? (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
-                    {searchData.map((i) => {
-                      const d = i.name;
-                      const Product_name = d.replace(/\s+/g, "-");
-                      return (
-                        <Link to={`/product/${Product_name}`}>
-                          <div className="flex items-center">
-                            <img src={i.image_Url[0]?.url} alt="" className="w-[50px] mr-2"/>
-                            <h5>{i.name}</h5>
+                    {searchData && searchData.map((i, index)=>{
+                      return(
+                        <Link to={`/product/${i._id}`} key={index}>
+                          <div className="flex items-center mb-2">
+                            <img src={i.images[0].url} alt="" className="w-[45px] mr-2"/>
+                            <h5 className='pl-3 text-[12px] sm:line-clamp-1 line-clamp-2 overflow-hidden'>{i.name}</h5>
                           </div>
                         </Link>
                       );
                     })}
                   </div>
-                )}
+                ):null
+                }
               </div>
 
               <Navbar active={activeHeading} mobile={open} />
@@ -230,8 +244,6 @@ const Header = ({activeHeading}) => {
               {/* <br />
               <br />
               <br /> */}
-
-              
             </div>
           </div>
         )}
