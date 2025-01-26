@@ -9,7 +9,7 @@ import {eventCreateRequest,eventCreateSuccess,eventCreateFail,
 export const createEvent = (data) => async (dispatch) => {
   try {
     dispatch(eventCreateRequest());
-    const { data: responseData } = await axios.post(`${server}/event/create-event`, data);
+    const { data: responseData } = await axios.post(`${server}/event/create-event`, data,{withCredentials: true});
     dispatch(eventCreateSuccess(responseData.event));
   } 
   catch (error) {
