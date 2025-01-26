@@ -160,7 +160,7 @@ const Header = ({activeHeading}) => {
           <div><BiMenuAltLeft size={40} className="ml-4" onClick={() => setOpen(true)}/></div>
           <div>
             <Link to="/">
-              <img src="https://shopo.quomodothemes.website/assets/images/logo.svg" alt="" className="mt-3 cursor-pointer"/>
+              {/* <img src="https://shopo.quomodothemes.website/assets/images/logo.svg" alt="" className="mt-3 cursor-pointer"/> */}
             </Link>
           </div>
           <div>
