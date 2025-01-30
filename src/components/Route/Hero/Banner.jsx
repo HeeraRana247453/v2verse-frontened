@@ -53,10 +53,10 @@ const Banner = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full sm:h-[550px] h-[150px] mx-auto overflow-hidden">
+    <div className="relative w-full sm:h-[550px] h-[275px] mx-auto overflow-hidden">
       <div className={`flex ${transitionRef.current ? "transition-transform duration-700 ease-in-out" : ""}`} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {extendedSlides.map((src, index) => (
-          <img key={index} src={src} className="w-full sm:h-[550px] h-[150px] object-cover flex-shrink-0" alt={`Slide ${index}`} />
+          <img key={index} src={src} className="w-[100vw] sm:h-[550px] h-[275px] object-cover flex-shrink-0" alt={`Slide ${index}`} />
         ))}
       </div>
 
