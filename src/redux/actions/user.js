@@ -28,15 +28,14 @@ export const updateUserInformation = (name, email, phoneNumber, password) => asy
     try {
       dispatch(updateUserInfoRequest());
       console.log("update action called");
-      const { data } = await axios.put(`${server}/user/update-user-info`,        {
+      const { data } = await axios.put(`${server}/user/update-user-info`,{
           name,
           email,
-          password,
           phoneNumber,
+          password,
         },
         {
-          withCredentials: true,
-          headers: {"Access-Control-Allow-Credentials": true,},
+          withCredentials: true
         }
       );
       dispatch(updateUserInfoSuccess(data.user));
