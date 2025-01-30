@@ -6,6 +6,7 @@ import FeaturedProduct from '../components/Route/FeaturedProduct/FeaturedProduct
 import Sponsored from '../components/Route/Sponsored.jsx';
 import Footer from '../components/Layout/Footer.jsx';
 import MostPopularEvent from './MostPopularEvent.jsx';
+import Banner from '../components/Route/Hero/Banner.jsx';
 
 
 const HomePage = () => {
@@ -13,7 +14,8 @@ const HomePage = () => {
   return (
     <div>
       <Header activeHeading={1} />
-      <Hero />
+      {/* <Hero /> */}
+      <Banner/>
       <Categories />
       <BestDeals />
       <MostPopularEvent/>
