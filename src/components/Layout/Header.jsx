@@ -65,7 +65,7 @@ const Header = ({activeHeading}) => {
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/">
-            <img src="v2verse.png" alt="V2Verse Logo" className="w-32 md:w-48 lg:w-56 h-auto"/>
+            <img src="/v2verse.png" alt="V2Verse Logo" className="w-32 md:w-48 lg:w-56 h-auto"/>
           </Link>
         </div>
 
@@ -170,7 +170,7 @@ const Header = ({activeHeading}) => {
           <div><HiMenu size={40} className="ml-4" onClick={() => setOpen(true)}/></div>
           <div className="flex items-center pt-2">
             <Link to="/">
-              <img src="v2verse.png" alt="V2Verse Logo" className="w-32 lg:w-56 h-auto"/>
+              <img src="/v2verse.png" alt="V2Verse Logo" className="w-32 lg:w-56 h-auto"/>
             </Link>
           </div>
 

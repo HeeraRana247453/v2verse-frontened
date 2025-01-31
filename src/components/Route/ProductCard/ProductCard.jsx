@@ -74,7 +74,7 @@ const ProductCard = ({data,isEvent}) => {
                             <h5 className={`${styles.productDiscountPrice}`}>₹{data.originalPrice === 0 ? data.originalPrice : data.discountPrice}</h5>
                             <h4 className={`${styles.price}`}>{data.originalPrice ? "₹" + data.originalPrice : null}</h4>
                         </div>
-                        <span className="font-[400] text-[17px] text-[#68d284]">{data?.sold_out} sold </span>
+                        <span className="hidden sm:block font-[400] text-[17px] text-[#68d284]">{data?.sold_out} sold </span>
                     </div>
                 </Link>
 

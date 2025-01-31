@@ -102,10 +102,10 @@ const OrderDetails = () => {
 
       {/* Order items */}
       {data && data?.cart.map((item, index) => (
-          <div key={index} className="w-full flex items-start mb-5 py-3 px-2 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div key={index} className="w-full flex items-start mb-5 py-3 sm:px-2 px-1 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <img src={`${item.images[0]?.url}`} alt="" className="w-[80x] h-[80px] rounded-md"/>
             <div className="w-full">
-                <h5 className="pl-3 text-[20px] sm:line-clamp-1 line-clamp-2 overflow-hidden" title={item.name}>{item.name}</h5>
+                <h5 className="pl-3 sm:text-[20px] text-[15px] sm:line-clamp-1 line-clamp-2 overflow-hidden" title={item.name}>{item.name}</h5>
                 <h5 className="pl-3 text-[20px] text-[#00000091]"> ₹{item.discountPrice} <sup>x {item.qty}</sup> </h5>
 
                 {/* Review Button */}
