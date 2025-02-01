@@ -11,11 +11,11 @@ const DashboardHeader = () => {
   return (
     <div className="w-full h-[80px] bg-white shadow sticky top-0 left-0 z-30 flex items-center justify-between px-4">
 
-      <div>
-        <Link to="/dashboard">
-          {/* <img src="https://shopo.quomodothemes.website/assets/images/logo.svg" alt=""/> */}
-        </Link>
-      </div>
+        <div className="flex items-center">
+          <Link to="/dashboard">
+            <img src="/v2verse.png" alt="V2Verse Logo" className="w-32 md:w-48 lg:w-56 h-auto"/>
+          </Link>
+        </div>
 
       <div className="flex items-center">
         <div className="flex items-center mr-4">
