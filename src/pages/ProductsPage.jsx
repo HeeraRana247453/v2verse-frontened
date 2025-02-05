@@ -24,7 +24,7 @@ const ProductsPage = () => {
       const d = allProducts && allProducts.filter((i) => i.category === categoryData);
       setData(d);
     }
-  }, [allProducts]);
+  }, [allProducts,categoryData]);
 
   return (
   <>

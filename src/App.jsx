@@ -22,7 +22,7 @@ import { getAllEvents } from './redux/actions/event.js';
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
 import SellerProtectedRoute from './routes/SellerProtectedRoute.jsx';
 import ProtectedAdminRoute from './routes/ProtectedAdminRoute.jsx';
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop1.jsx";
 
 const App = () => {
 

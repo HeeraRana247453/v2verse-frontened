@@ -8,7 +8,6 @@ const DropDown = ({categoriesData,setDropDown}) => {
   const handleCategoryClick = (category) => {
     navigate(`/products?category=${category.title}`);
     setDropDown(false);
-    // window.location.reload();//not needed here
     }
 
   return (

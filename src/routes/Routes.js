@@ -9,7 +9,7 @@ import FAQPage from "../pages/FAQPage.jsx";
 import CheckoutPage from "../components/Checkout/Checkout.jsx";
 import PaymentPage from "../pages/PaymentPage.jsx";
 import OrderSuccessPage from "../pages/OrderSuccessPage.jsx";
-import ProductDetailsPage from "../pages/ProductDetailsPage.jsx";
+import ProductDetailsPage from "../pages/ProductDetailsPage1.jsx";
 import ProfilePage from "../pages/ProfilePage.jsx";
 import ShopCreatePage from "../pages/ShopCreatePage.jsx";
 import SellerActivationPage from "../pages/SellerActivationPage.jsx";
