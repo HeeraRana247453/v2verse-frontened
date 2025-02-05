@@ -6,6 +6,7 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useLayoutEffect(() => {
+    window.history.scrollRestoration = "manual"; // Prevent browser from restoring scroll position
     window.scrollTo(0,0);
   }, [pathname]); // Trigger on route change
 
