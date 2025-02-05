@@ -42,7 +42,7 @@ const Header = ({activeHeading}) => {
     const handleClickOutside = (event) => {
         if (searchBoxRef.current && !searchBoxRef.current.contains(event.target)) {
             setSearchData(null);
-            setDropDown(false);
+            // setDropDown(false);//it is making dropdown close before navigate to the category onclick
         }
     };
     useEffect(() => {

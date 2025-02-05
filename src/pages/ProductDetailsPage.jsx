@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useLayoutEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header";
@@ -17,6 +17,11 @@ const ProductDetailsPage = () => {
   const [searchParams] = useSearchParams();
   const eventData = searchParams.get("isEvent");
   const [data, setData] = useState(null);
+
+   // Ensure the page starts at the top before rendering
+   useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Fetch all events of the shop when seller ID is available
   useEffect(() => {
