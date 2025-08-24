@@ -46,9 +46,9 @@ const Header = ({activeHeading}) => {
         }
     };
     useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
+        // document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            // document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
