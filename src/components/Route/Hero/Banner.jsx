@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 
 const images = [
-  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1738259108/banner6_j0hyje.webp",
-  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1738259109/banner9_scrhsq.webp",
-  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1738259108/banner7_qg4x15.webp",
-  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1738259109/banner8_hcxehh.webp",
-  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1738259108/banner5_dpqqbc.webp",
-  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1738259108/banner10_fnbdht.webp",
+  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1756049930/banner9_scrhsq.jpg",
+  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1756052116/cb7gvlecq3witepr-0_0_desktop_0_1X_g50ckl.webp",
+  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1756051968/viqyjbgqnf8gfhbc-0_0_desktop_0_1X_zqqlp7.webp",
+  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1756050131/banner8_hcxehh.jpg",
+  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1756052641/OnePlus_13s_desktop_wd8oqn.jpg",
+  "https://res.cloudinary.com/dmvmebkrr/image/upload/v1756051839/comput_bbz0kz.webp",
 ];
 
 const Banner = () => {
