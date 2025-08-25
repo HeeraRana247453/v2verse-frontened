@@ -49,9 +49,9 @@ const AllWithdraw = () => {
       },
       {withCredentials: true})
       .then((res) => {
-        toast.success("Withdraw request updated successfully!");
         setData(res.data.withdraws);
         setOpen(false);
+        toast.success("Withdraw request updated successfully!");
       });
   };
 
