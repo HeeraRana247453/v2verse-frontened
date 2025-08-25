@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteProduct, getAllProductsShop } from "../../redux/actions/product";
 import Loader from "../Layout/Loader";
+import { toast } from "react-toastify";
 
 
 const AllProducts = () => {
@@ -21,7 +22,10 @@ const AllProducts = () => {
 
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
-    window.location.reload();
+    // window.location.reload().then(
+    //   setTimeout(() => {}, 3000)
+    // );
+    toast.success("Product Deleted Successfully!, \nWait for 3-4 seconds & refresh the page");
   };
 
   const columns = [
