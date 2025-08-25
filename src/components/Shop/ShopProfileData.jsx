@@ -96,7 +96,8 @@ const ShopProfileData = ({ isOwner }) => {
         <div>
           {allReviews?.map((review, index) => (
             <div key={index} className="flex items-start space-x-4 py-4 border-b">
-              <img src={`${review.user.avatar?.url}`} alt="" className="w-[50px] h-[50px] rounded-full"/>
+              {/* Temporarly hardcode the image url, later i will resole the avatar url issue */}
+              <img src={`${"https://res.cloudinary.com/dmvmebkrr/image/upload/v1755955906/avatars/ixm5siq81irrlydmeni6.jpg" || review.user.avatar?.url}`} alt="" className="w-[50px] h-[50px] rounded-full"/>
               <div>
                 <h4 className="font-bold">{review.user.name}</h4>
                 <Ratings rating={review.rating} />
